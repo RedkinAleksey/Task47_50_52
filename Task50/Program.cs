@@ -29,7 +29,7 @@ void PrintMatrix(int[,] matrix)
         //Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j], 6}");
+            Console.Write($"{matrix[i, j], 4}");
         }
        // Console.WriteLine("  |");
        Console.WriteLine();
@@ -48,7 +48,7 @@ while (rows <= 0 || columns <= 0)
     Console.Write("Введите количество столбцов массива: ");
     columns = Convert.ToInt32(Console.ReadLine());
 }
-int[,] array2d = CreateMatrixRndInt(rows, columns, -100, 100);
+int[,] array2d = CreateMatrixRndInt(rows, columns, 0, 9);
 PrintMatrix(array2d);
 
 Console.WriteLine("Введите строку позиции элемента. (Отсчет начинается с нуля.)");
