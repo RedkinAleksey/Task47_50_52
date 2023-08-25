@@ -36,12 +36,18 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-Console.WriteLine("Введите количество строк массива.");
-int rows = Convert.ToInt32(Console.ReadLine());
+int rows = 0;
+int columns = 0;
+while (rows <= 0 || columns <= 0)
+{
+    Console.Clear();
+    Console.WriteLine("Количество строк и столбцов массива должно быть положительное.");
+    Console.Write("Введите количество строк массива: ");
+    rows = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите количество столбцов массива.");
-int columns = Convert.ToInt32(Console.ReadLine());
-
+    Console.Write("Введите количество столбцов массива: ");
+    columns = Convert.ToInt32(Console.ReadLine());
+}
 int[,] array2d = CreateMatrixRndInt(rows, columns, -100, 100);
 PrintMatrix(array2d);
 
@@ -57,5 +63,5 @@ if (rowsElement >= rows || columsElement >= columns || rowsElement < 0 || colums
 }
 else
 {
-    Console.WriteLine($"Элемент равен {array2d[rowsElement, columsElement]}");
+    Console.WriteLine($"Элемент равен {array2d[rowsElement, columsElement]}.");
 }
